@@ -1,0 +1,49 @@
+:root {
+    --red: #f23557;
+    --yellow: #f0d43a;
+    --blueL: #22b2da;
+    --blueD: #3b4a6b;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    background-color: var(--blueD);
+    color: #22b2da;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 5px;
+    border: 2px solid var(--blueL);
+    padding: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--blueL);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+}
