@@ -5,6 +5,7 @@ function gameBoard() {
         //let currentPlayer = 'X';
         const player1 = createUser('Player1', 'X');
         const player2 = createUser('Player2', 'O');
+        let currentPlayer = player1;
     
         // Create cells
         for (let i = 0; i < 9; i++) {
@@ -17,13 +18,13 @@ function gameBoard() {
 
         function makeMove(index) {
             if (cells[index].textContent === '') {
-                cells[index].textContent = player1.marker;
-                if (checkWinner(player1.marker)) {
-                    alert(`${player1.name} wins!`);
+                cells[index].textContent = currentPlayer.marker;
+                if (checkWinner(currentPlayer.marker)) {
+                    alert(`${currentPlayer.name} wins!`);
                 } else if (checkDraw()) {
                     alert("It's a draw");
                 } else {
-                    player2.marker;
+                    currentPlayer = (currentPlayer === player1) ? player2 : player1;
                 }
             }
         }
@@ -43,7 +44,11 @@ function gameBoard() {
 
         function resetBoard() {
             cells.forEach(cell => cell.textContent = '');
+            // currentPlayer = player1;
         }
+
+        const resetBtn = document.querySelector('#restart');
+        resetBtn.addEventListener('click', resetBoard);
     });
 }
 
@@ -51,19 +56,7 @@ function createUser(name, marker) {
     return {
         name: name,
         marker: marker,
-        greet: function() {
-            console.log(`Hello ${this.name} your marker is ${this.marker}`);
-        }
     };
 }
 
-const user1 = createUser('player', 'X');
-const user2 = createUser('computer', 'O');
-
-user1.greet();
-user2.greet();
-
-gameBoard();
-
-const resetBtn = document.querySelector('#restart');
-resetBtn.addEventListener('click', gameBoard.resetBoard);
+const game = gameBoard();
