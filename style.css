@@ -16,24 +16,35 @@ body {
     color: #22b2da;
 }
 
+header {
+    font-size: 30px;
+}
+
 .board {
+    margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    grid-gap: 5px;
-    padding: 5px;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
-    border: 2px solid var(--blueL);
+    border: 8px solid var(--blueL);
+    border-left: none;
+    border-top: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: 10em;
     font-weight: bold;
     cursor: pointer;
+}
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.cell:nth-child(n + 7) {
+    border-bottom: none;
 }
 
 header {
@@ -44,5 +55,8 @@ header {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     text-align: center;
 }
