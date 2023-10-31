@@ -17,7 +17,15 @@ body {
 }
 
 header {
-    font-size: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header > h1 {
+    font-size: 50px;
+    color: var(--red)
 }
 
 .board {
@@ -55,11 +63,20 @@ header {
     color: var(--yellow);
 }
 
-header {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#restart {
+    background-color: var(--red);
+    color: #fff;
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#restart:hover {
+    background-color: #d81b3b;
 }
 
 footer {

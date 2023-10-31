@@ -19,7 +19,7 @@ function gameBoard() {
             if (cells[index].textContent === '') {
                 cells[index].textContent = currentPlayer.marker;
                 cells[index].classList.add(currentPlayer.marker);
-                
+
                 if (checkWinner(currentPlayer.marker)) {
                     alert(`${currentPlayer.name} wins!`);
                 } else if (checkDraw()) {
@@ -44,8 +44,11 @@ function gameBoard() {
         }
 
         function resetBoard() {
-            cells.forEach(cell => cell.textContent = '');
-
+            cells.forEach(cell => {
+                cell.textContent = '';
+                cell.classList.remove('X', 'O');
+            });
+            currentPlayer = player1;
         }
 
         const resetBtn = document.querySelector('#restart');
