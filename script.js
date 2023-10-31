@@ -2,9 +2,8 @@ function gameBoard() {
     document.addEventListener('DOMContentLoaded', function() {
         const board = document.querySelector('.board');
         const cells = [];
-        //let currentPlayer = 'X';
-        const player1 = createUser('Player1', 'X');
-        const player2 = createUser('Player2', 'O');
+        const player1 = createUser('Player 1', 'X');
+        const player2 = createUser('Player 2', 'O');
         let currentPlayer = player1;
     
         // Create cells
@@ -19,6 +18,8 @@ function gameBoard() {
         function makeMove(index) {
             if (cells[index].textContent === '') {
                 cells[index].textContent = currentPlayer.marker;
+                cells[index].classList.add(currentPlayer.marker);
+                
                 if (checkWinner(currentPlayer.marker)) {
                     alert(`${currentPlayer.name} wins!`);
                 } else if (checkDraw()) {
@@ -44,7 +45,7 @@ function gameBoard() {
 
         function resetBoard() {
             cells.forEach(cell => cell.textContent = '');
-            // currentPlayer = player1;
+
         }
 
         const resetBtn = document.querySelector('#restart');

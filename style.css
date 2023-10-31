@@ -34,7 +34,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 10em;
+    font-size: 6em;
     font-weight: bold;
     cursor: pointer;
 }
@@ -45,6 +45,14 @@ header {
 
 .cell:nth-child(n + 7) {
     border-bottom: none;
+}
+
+.cell.X {
+    color: var(--red);
+}
+
+.cell.O {
+    color: var(--yellow);
 }
 
 header {
