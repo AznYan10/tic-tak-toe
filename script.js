@@ -52,6 +52,9 @@ function gameBoard() {
             return cells.every(cell => cell.textContent != '');
         }
 
+        const resetBtn = document.querySelector('#restart');
+        resetBtn.addEventListener('click', resetBoard);
+
         function resetBoard() {
             cells.forEach(cell => {
                 cell.textContent = '';
@@ -61,8 +64,15 @@ function gameBoard() {
             turns.innerHTML = `${currentPlayer.marker} Starts Game!`;
         }
 
-        const resetBtn = document.querySelector('#restart');
-        resetBtn.addEventListener('click', resetBoard);
+        const startBtn = document.querySelector('#start');
+        const playersDiv = document.querySelector('.players');
+        startBtn.addEventListener('click', startGame);
+
+        function startGame() {
+            resetBtn.style.display = 'block';
+            board.style.display = 'grid';
+            playersDiv.style.display = 'none';
+        }
     });
 }
 

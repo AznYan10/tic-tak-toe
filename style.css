@@ -22,7 +22,44 @@ header {
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    color: var(--red)
+    color: var(--blueL);
+}
+
+.players {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.players label {
+    font-size: 18px;
+    color: var(--blueL);
+}
+
+.players input {
+    padding: 8px;
+    margin: 5px;
+    border: 2px solid var(--blueL);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#start {
+    background-color: var(--yellow);
+    color: var(--blueD);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#start:hover {
+    background-color: #e0c232;
+}
+
+#start:hover {
+    background-color: #e0c232;
 }
 
 #turns {
@@ -33,7 +70,8 @@ header {
 
 .board {
     margin-top: 50px;
-    display: grid;
+    display: none;;
+    /* display: grid; */
     grid-template-columns: repeat(3, 120px);
     grid-template-rows: repeat(3, 120px);
 }
@@ -67,6 +105,7 @@ header {
 }
 
 #restart {
+    display: none;
     background-color: var(--red);
     color: #fff;
     font-size: 1em;
